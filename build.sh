@@ -52,15 +52,13 @@ msg "Building Rom"
 rm -rf out
 source build/envsetup.sh
 msg "source build/envsetup.sh done"
-lunch lineage-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
-make bacon
+brunch X00TD
 
   msg "Uploading Rom"
   cd out/target/product/$DEVICE
   ls
 
   msg "Upload started"
-  tg_post_build "recovery.img"  "$CHATID" "Recovery Build Succesfull! | Name : <code>$OUTFILE</code>" 
+  tg_post_build "*.zip" "$CHATID" "Recovery Build Succesfull! | Name : <code>$OUTFILE</code>" 
   tg_post_msg "<b>rom build failed!</b>"
