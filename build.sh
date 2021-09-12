@@ -42,6 +42,7 @@ cd /tmp/rum
 apt install openssh-server -y
 apt update --fix-missing
 apt install openssh-server -y
+apt install openjdk-8-jdk
 
 msg "Syncing Rom Source"
 repo init --depth=1 --no-repo-verify -u $MANIFEST -g default,-device,-mips,-darwin,-notdefault
