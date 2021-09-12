@@ -55,10 +55,9 @@ msg "source build/envsetup.sh done"
 export TZ=Asia/Jakarta #put before last build command
 brunch X00TD
 
-  msg "Uploading Rom"
-  cd out/target/product/$DEVICE
-  ls
+msg "Uploading Rom"
+OUTFILE=$(find out/target/product/$DEVICE iname \*.zip)
 
-  msg "Upload started"
-  tg_post_build "*.zip" "$CHATID" "Recovery Build Succesfull! | Name : <code>$OUTFILE</code>" 
-  tg_post_msg "<b>rom build failed!</b>"
+msg "Upload started"
+tg_post_build "$OITFILE" "$CHATID" "Recovery Build Succesfull! | Name : <code>$OUTFILE</code>" 
+tg_post_msg "<b>rom build failed!</b>"
