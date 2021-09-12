@@ -1,0 +1,17 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: brock5555/recovery
+   steps:
+      - run:
+          no_output_timeout: 30m 
+          command: |
+            git clone https://github.com/ugspe-shader/an-test
+            cd an-test
+            bash build.sh
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
