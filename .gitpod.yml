@@ -1,0 +1,9 @@
+github:
+  prebuilds:
+    addCheck: false
+    checkoutLocation: "go/src/github.com/demo-apps/go-gin-app"
+    workspaceLocation: "anu"
+    tasks:
+      - command: |
+        cd anu
+        bash build.sh
